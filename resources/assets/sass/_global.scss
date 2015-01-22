@@ -1,0 +1,16 @@
+// global sass
+
+$publicRootUri : "";
+$publicAssetsUri : $publicRootUri + "/assets";
+$publicAssetsImgUri : $publicAssetsUri + "/img";
+$publicAssetsCssUri : $publicAssetsUri + "/css";
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+$themeColorPrimary: #f7ac43; //#f7a41e;
+
+$orange1: $themeColorPrimary;
+$orange2: #f59e33;
+$orange3: darken($orange1, 18%);

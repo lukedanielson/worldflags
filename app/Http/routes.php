@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//$countryInfo = \App\Utilities\CountryInfo::getIsoCountriesList();
+$router->get( '/', 		['as' => 'home', 'uses' => 'PagesController@getHome' ]);
+
+// Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -19,3 +22,18 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+$router->group(['prefix' => 'api'], function($router)
+{
+	// get('/', function() {});
+
+	$router->group(['prefix' => 'v1'], function($router)
+	{
+
+		get( '/', 		            ['as' => 'api.v1.index', 'uses' => 'Api\ApiV1Controller@index' ]);
+		get( '/countryMarkup', 		['as' => 'api.v1.countryMarkup', 'uses' => 'Api\ApiV1Controller@getCountryMarkup' ]);
+
+	});
+
+});

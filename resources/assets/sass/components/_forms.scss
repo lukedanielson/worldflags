@@ -1,0 +1,45 @@
+$errorBgColor: lighten($alert-color, 20%);
+$errorBorderColor: darken( $errorBgColor , 8%);
+$errorPlaceholderColor: darken($alert-color, 18%);
+
+form {
+
+  .form-input {
+
+    &.error {
+      background-color: $errorBgColor;
+      border-color: $errorBorderColor;
+
+      &::-webkit-input-placeholder {
+        color: $errorPlaceholderColor;
+        opacity: 0.6;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $errorPlaceholderColor;
+        opacity: 0.6;
+      }
+
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $errorPlaceholderColor;
+        opacity: 0.6;
+      }
+
+      &:-ms-input-placeholder {
+        color: $errorPlaceholderColor;
+        opacity: 0.6;
+      }
+    }
+
+  }
+
+  .prefix {
+    &.has-error {
+      background-color: $alert-color;
+      i {
+        color: $alert-font-color;
+      }
+    }
+  }
+
+}

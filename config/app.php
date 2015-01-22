@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => (env('APP_ENV') === 'dev') ? 'http://worldflags.dev' : 'http://worldflags.io',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -144,6 +144,9 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+
+
+		'App\Providers\ViewComposerServiceProvider',
 
 	],
 

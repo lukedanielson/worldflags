@@ -1,0 +1,87 @@
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.img-responsive,
+.th > img, .th a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;max-width: 100%;height: auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.strong,
+.bold {font-weight:700!important;}
+
+.mw300,
+.thin {
+  font-weight:300!important;
+  & > p {
+    font-weight:300!important;
+  }
+}
+
+.ta-left {text-align:left;}
+.ta-right {text-align:right;}
+.ta-center {text-align:center;}
+
+.mb0 {margin-bottom: 0!important;}
+.mt0 {margin-top: 0!important;}
+
+.padder-lg {
+  margin: 0;
+  padding: 2.2rem 2.5rem;
+  zoom: 1;
+}
+
+.prefix{
+  &.large{
+    font-size: 0.9rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    & > .i {
+
+    }
+  }
+}
+
+.form-input{
+  &.large{
+    font-size: 0.9rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+  }
+}
+
+.alert-box {
+  font-weight: 300;
+
+  padding-right:1.9rem;
+
+  & > ul {
+    margin-bottom: 0;
+  }
+
+  &.info {
+    color: #E5F6FF;
+  }
+  &.success {
+    color: #D0FDD0;
+  }
+}
+
+.flash-notify {
+  &.flash-notify-main {
+
+  }
+}
+
+.muted {
+  color:$base!important;
+}

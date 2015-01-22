@@ -3,3 +3,7 @@
 
 composer.lock
 .idea
+
+/node_modules
+
+/resources/assets/bower_components
