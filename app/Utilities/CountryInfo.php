@@ -2036,7 +2036,7 @@ class CountryInfo {
 		"IR" => array(
 			"ISO2" => "IR",
 			"ISO3" => "IRN",
-			"name" => "Iran, Islamic Republic Of",
+			"name" => "Iran",
 			"type" => "sovereign",
 			"states" => array(
 				"Bushehr Province",
@@ -2119,8 +2119,8 @@ class CountryInfo {
 		"JE" => array(
 			"ISO2" => "JE",
 			"ISO3" => "JEY",
-			"name" => "Jersey, Bailiwick of",
-			"type" => "possession",
+			"name" => "Jersey",
+			"type" => "bailiwick",
 			"member_of" => "GB",
 			"states" => array(
 				"Jersey ",
@@ -2331,7 +2331,7 @@ class CountryInfo {
 		"KP" => array(
 			"ISO2" => "KP",
 			"ISO3" => "PRK",
-			"name" => "Korea, Democratic People's Republic Of",
+			"name" => "Korea, North",
 			"type" => "sovereign",
 			"states" => array(
 				"Chagang-do",
@@ -2352,7 +2352,7 @@ class CountryInfo {
 		"KR" => array(
 			"ISO2" => "KR",
 			"ISO3" => "KOR",
-			"name" => "Korea, Republic Of",
+			"name" => "Korea, South",
 			"type" => "sovereign",
 			"states" => array(
 				"Busan",

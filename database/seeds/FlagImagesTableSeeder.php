@@ -9,7 +9,7 @@ class FlagImagesTableSeeder extends Seeder {
 	public function run()
 	{
 		$countryRepo = App::make('App\Repos\CountryRepo');
-		$countries = $countryRepo->byRaw("slug RLIKE '^(a|b|c|d|e|f){1}.+'")->get(); //slug LIKE 'a%' OR slug LIKE 'b%' OR slug LIKE 'c%' OR slug LIKE 'd%'
+		$countries = $countryRepo->byRaw("slug RLIKE '^(a|b|c|d|e|f|g|h|i|j|k){1}.+'")->get(); //slug LIKE 'a%' OR slug LIKE 'b%' OR slug LIKE 'c%' OR slug LIKE 'd%'
 
 		$svgBasePath = URL::to('/assets/img/flags/2015/svg/natural_aspect/by-name');
 

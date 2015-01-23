@@ -19,7 +19,7 @@ class MasterViewComposer {
 	{
 		$currRouteName =  Route::currentRouteName();
 
-		$siteMetaTitle = ($currRouteName === 'home') ? Lang::get('site.meta.title') : $currentRouteTitle . ' :: ' . Lang::get('site.meta.title');
+		$siteMetaTitle = ($currRouteName === 'home') ? Lang::get('site.meta.title') : $currRouteName . ' :: ' . Lang::get('site.meta.title');
 
 		$siteLogoMainUrl = URL::to('');
 

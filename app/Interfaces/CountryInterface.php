@@ -18,6 +18,8 @@ interface CountryInterface {
 
 	public function byRaw($string);
 
+	public function bySearch($string);
+
 	public function create($input);
 
 }

@@ -2,6 +2,11 @@
 
 body {
   background: #001b21;
+  color: rgba(255,255,255,0.7);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(255,255,255,0.7);
 }
 
 #bg-main {
@@ -33,7 +38,8 @@ body {
 
 #fotw-search-main {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
 
   .searchfield {
     padding:2rem 0;
@@ -79,10 +85,37 @@ body {
 
 #fotw-results-main {
   display: block;
+  position: relative;
   @include clearfix;
 
+  > .results-loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 3px;
+    display: none;
+
+    &.in {
+      display: block;
+      background: rgba(255,255,255,0.22);
+    }
+
+  }
+
+  .no-items-wrap {
+    display: block;
+    padding:1rem;
+
+    .no-items-header {
+      display: block;
+      text-align: center;
+    }
+
+  }
   .items-wrap{
     display: block;
+    @include clearfix;
 
     &.show-titles {
       .flag-item-wrap {

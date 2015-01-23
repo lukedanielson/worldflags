@@ -2,6 +2,7 @@
 
 use App\Models\Country;
 use App\Interfaces\CountryInterface;
+use Illuminate\Support\Str;
 
 class CountryRepo implements CountryInterface {
 
@@ -65,6 +66,32 @@ class CountryRepo implements CountryInterface {
 	public function byRaw($string)
 	{
 		return $this->model->whereRaw($string);
+	}
+
+	public function bySearch($q)
+	{
+		$qLength = Str::length($q);
+
+		if( $qLength == 1 )
+		{
+			$query = $this->model->where('name', 'like', $q . '%');
+
+		} else if( $qLength <= 3 )
+		{
+		    $query = $this->model->where('name', 'like', '%' . $q . '%')
+		                    ->orWhere('iso_3166-1_a2', '=', Str::upper($q))
+			                ->orWhere('iso_3166-1_a3', 'like', Str::upper($q));
+		} else
+		{
+			$query = ($q === '_all') ? $this->allBy() : $this->model->where('name', 'like', '%' . $q . '%');
+		}
+
+		// $this->model->where( function ( $q2 ) use ( $string ) {
+			// $q2->whereRaw( 'LOWER(`title`) like ?', array( $string ) );
+			// $q2->orWhereRaw( 'LOWER(`desc`) like ?', array( $string ) );
+		// });
+
+		return $query;
 	}
 
 	public function create($input)
