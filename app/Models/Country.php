@@ -6,7 +6,7 @@ class Country extends Model{
 
 	protected $table = 'countries';
 
-	protected $fillable = ['name', 'slug', 'type', 'iso_3166-1_a2', 'iso_3166-1_a2', 'created_at', 'updated_at' ];
+	protected $fillable = ['name', 'slug', 'type', 'iso_3166-1_a2', 'iso_3166-1_a3', 'created_at', 'updated_at' ];
 
 	protected $with = ['FlagImages'];
 
@@ -17,12 +17,14 @@ class Country extends Model{
 		return $query->orderBy('slug','ASC');
 	}
 
-	public function code_iso($isoCode='3166-1-a2')
+	public function code_iso($isoCode='alpha-2')
 	{
 		$columnName = null;
 
-		if($isoCode === '3166-1-a2'){
+		if($isoCode === 'alpha-2'){
 			$columnName = 'iso_3166-1_a2';
+		} else if ($isoCode === 'alpha-3'){
+			$columnName = 'iso_3166-1_a3';
 		}
 
 		return $this->{$columnName};
@@ -39,4 +41,23 @@ class Country extends Model{
 
 		return $items->first();
 	}
+
+
+	public function flagWrapCssClasses()
+	{
+		$classes = ['flag-img-wrap'];
+
+		if( in_array($this->code_iso('alpha-3'), ['NPL']) ) // nepal
+		{
+			$classes[] = 'flag-img-wrap-inverted-ratio';
+			$classes[] = 'flag-img-wrap-no-border';
+
+		} else if ( in_array($this->code_iso('alpha-3'), ['VAT', 'CHE']) ) // vatican, switzerland
+		{
+			$classes[] = 'flag-img-wrap-even-ratio';
+		}
+
+		return $classes;
+	}
+
 }

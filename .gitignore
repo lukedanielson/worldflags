@@ -7,3 +7,5 @@ composer.lock
 /node_modules
 
 /resources/assets/bower_components
+
+/resources/assets/img/flags/_wiki

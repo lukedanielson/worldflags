@@ -1,8 +1,8 @@
 @if($countries->count())
-    <div class="items-wrap across-20 show-titles">
+    <div class="items-wrap across-15 show-titles">
         @foreach($countries as $country)
             <div class="flag-item-wrap">
-                <div class="flag-img-wrap">
+                <div class="{{ implode( $country->flagWrapCssClasses(), ' ' ) }}">
                     @if($country->flagImage2015())
                         <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $country->flagImage2015()->url }}">
                     @else

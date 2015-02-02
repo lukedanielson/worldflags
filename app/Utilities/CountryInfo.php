@@ -1457,7 +1457,7 @@ class CountryInfo {
 		"FM" => array(
 			"ISO2" => "FM",
 			"ISO3" => "FSM",
-			"name" => "Micronesia, Federated States Of",
+			"name" => "Federated States Of Micronesia",
 			"type" => "sovereign",
 			"states" => array(
 				"Chuuk",
@@ -2419,7 +2419,7 @@ class CountryInfo {
 		"LA" => array(
 			"ISO2" => "LA",
 			"ISO3" => "LAO",
-			"name" => "Lao People's Democratic Republic",
+			"name" => "Laos",
 			"type" => "sovereign",
 			"states" => array(
 				"Kamphèng Nakhon Viangchan",
@@ -2626,7 +2626,7 @@ class CountryInfo {
 		"LY" => array(
 			"ISO2" => "LY",
 			"ISO3" => "LBY",
-			"name" => "Libya, State of",
+			"name" => "Libya",
 			"type" => "sovereign",
 			"states" => array(
 				"Baladīyat Ajdābiyā",
@@ -2849,7 +2849,7 @@ class CountryInfo {
 		"MK" => array(
 			"ISO2" => "MK",
 			"ISO3" => "MKD",
-			"name" => "Macedonia, Republic Of",
+			"name" => "Macedonia",
 			"type" => "sovereign",
 			"states" => array(
 				"Opština Aračinovo",
@@ -3774,7 +3774,7 @@ class CountryInfo {
 		"PS" => array(
 			"ISO2" => "PS",
 			"ISO3" => "PSE",
-			"name" => "Palestinian Territory",
+			"name" => "Palestine",
 			"type" => "sovereign",
 			"states" => array(
 				"Gaza Strip",
@@ -3946,7 +3946,7 @@ class CountryInfo {
 		"RU" => array(
 			"ISO2" => "RU",
 			"ISO3" => "RUS",
-			"name" => "Russian Federation",
+			"name" => "Russia",
 			"type" => "sovereign",
 			"states" => array(
 				"Aginskiy Buryatskiy Avtonomnyy Okrug",
@@ -4597,7 +4597,7 @@ class CountryInfo {
 		"SY" => array(
 			"ISO2" => "SY",
 			"ISO3" => "SYR",
-			"name" => "Syrian Arab Republic",
+			"name" => "Syria",
 			"type" => "sovereign",
 			"states" => array(
 				"Aleppo",
@@ -4779,7 +4779,7 @@ class CountryInfo {
 		"TL" => array(
 			"ISO2" => "TL",
 			"ISO3" => "TLS",
-			"name" => "Timor-leste (east Timor)",
+			"name" => "East Timor",
 			"type" => "sovereign",
 			"states" => array(
 				"Aileu",
@@ -4976,7 +4976,7 @@ class CountryInfo {
 		"TW" => array(
 			"ISO2" => "TW",
 			"ISO3" => "TWN",
-			"name" => "Taiwan, Province Of China",
+			"name" => "Taiwan",
 			"type" => "constituent",
 			"member_of" => "CN",
 			"states" => array(
@@ -5010,7 +5010,7 @@ class CountryInfo {
 		"TZ" => array(
 			"ISO2" => "TZ",
 			"ISO3" => "TZA",
-			"name" => "Tanzania, United Republic Of",
+			"name" => "Tanzania",
 			"type" => "sovereign",
 			"states" => array(
 				"Arusha Region",
@@ -5323,7 +5323,7 @@ class CountryInfo {
 		"VA" => array(
 			"ISO2" => "VA",
 			"ISO3" => "VAT",
-			"name" => "Vatican City State (Holy See)",
+			"name" => "Vatican City",
 			"type" => "sovereign",
 			"states" => array()
 		),
