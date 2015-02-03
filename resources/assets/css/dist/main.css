@@ -6057,10 +6057,23 @@ h1, h2, h3, h4, h5, h6 {
     display: table;
     clear: both; }
 
+.site-header-main {
+  display: block;
+  text-align: center; }
+  .site-header-main .header-main {
+    display: block;
+    text-align: center;
+    margin: 2.5rem 0 1rem; }
+    .site-header-main .header-main a {
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 3rem;
+      text-transform: uppercase; }
+
 #fotw-search-main {
   margin-top: 0;
   margin-bottom: 1rem;
-  padding-top: 1rem; }
+  padding-top: 0.2rem; }
   #fotw-search-main .searchfield {
     padding: 2rem 0; }
     #fotw-search-main .searchfield form input[name="s"] {

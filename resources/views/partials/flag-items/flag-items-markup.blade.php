@@ -3,11 +3,13 @@
         @foreach($countries as $country)
             <div class="flag-item-wrap">
                 <div class="{{ implode( $country->flagWrapCssClasses(), ' ' ) }}">
-                    @if($country->flagImage2015())
-                        <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $country->flagImage2015()->url }}">
-                    @else
-                        <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $placeholderFlagImg1Url }}">
-                    @endif
+                    <a class="flag-item-link" title="{{ $country->name }}" href="{{ URL::to('flags/' . $country->slug) }}">
+                        @if($country->flagImage2015())
+                            <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $country->flagImage2015()->url }}">
+                        @else
+                            <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $placeholderFlagImg1Url }}">
+                        @endif
+                    </a>
                 </div><!-- end .flag-img-wrap -->
                 <div class="flag-title-wrap">{{ $country->name }}</div><!-- end .flag-title-wrap -->
             </div><!-- end .flag-item-wrap -->

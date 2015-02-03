@@ -29,6 +29,9 @@
 
 <div class="container-fluid container-main" role="document">
 
+    <div class="site-header-main">
+        <h2 class="header-main"><a title="Flags of The World" href="{{ URL::to('/') }}">Flags of the World</a></h2>
+    </div><!-- end .site-header-main -->
 
     @yield('content')
 

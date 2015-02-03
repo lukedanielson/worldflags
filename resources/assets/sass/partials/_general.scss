@@ -32,6 +32,26 @@ h1, h2, h3, h4, h5, h6 {
     padding:1rem 0;
     min-height: 660px;
     @include clearfix;
+
+
+
+  }
+}
+
+.site-header-main {
+  display: block;
+  text-align: center;
+
+  .header-main {
+    display: block;
+    text-align: center;
+    margin:2.5rem 0 1rem;
+      a {
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 3rem;
+        text-transform: uppercase;
+      }
   }
 }
 
@@ -39,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 #fotw-search-main {
   margin-top: 0;
   margin-bottom: 1rem;
-  padding-top: 1rem;
+  padding-top: 0.2rem;
 
   .searchfield {
     padding:2rem 0;

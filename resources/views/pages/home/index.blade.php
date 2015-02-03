@@ -1,14 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-
     <div id="fotw-search-main" class="row">
         <div class="small-12 columns">
             <div class="searchfield">
                 <form id="fotw-search-form">
                     <div class="row">
                         <div class="small-12 columns">
-                            <label><input class="input-lg" name="s" type="text" placeholder="Flags of The World" autocomplete="off" autocorrect="off"/></label>
+                            <label><input class="input-lg" name="s" type="text" placeholder="Search for a flag" autocomplete="off" autocorrect="off"/></label>
                         </div>
                     </div>
                 </form>
