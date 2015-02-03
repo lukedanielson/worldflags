@@ -1,5 +1,5 @@
 @if($countries->count())
-    <div class="items-wrap across-15 show-titles">
+    <div class="{{ (Request::path() === '/') ? 'items-wrap across-16' : 'items-wrap across-10 show-titles' }}">
         @foreach($countries as $country)
             <div class="flag-item-wrap">
                 <div class="{{ implode( $country->flagWrapCssClasses(), ' ' ) }}">

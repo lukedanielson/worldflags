@@ -3,27 +3,37 @@
 body {
   background: #001b21;
   color: rgba(255,255,255,0.7);
+
+  & > .site-bg-item {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sniglet', sans-serif;
   color: rgba(255,255,255,0.7);
 }
 
+
+
 #bg-main {
   background: #001b21 url('/assets/img/bg/001/1920x1080.jpg') repeat-x 0 0;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  background-position: 50% 50%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+}
+
+#bg-overlay {
+  background: rgba(87, 114, 126, 0.54);
 }
 
 .container {
@@ -51,10 +61,87 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
         font-size: 3rem;
         text-transform: uppercase;
+        color:#FDFDFD;
+
+        .logo-stack {
+          font-size: 0.9em;
+          margin-right: 15px;
+        }
+
       }
   }
 }
 
+.logo-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+
+  font-size: 0.9em;
+  margin-right: 15px;
+
+  & > .fa-circle {
+    font-size: 1.55em;
+    line-height: inherit;
+    color: #CBFDD3;
+  }
+
+  & > .fa-globe{
+    font-size: 1.67em;
+    line-height: inherit;
+    color: #5D90B5;
+  }
+
+  & > .fa-flag {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: inherit;
+
+    &.logo-flag1 {
+      color: #FAE599;
+      left: 31%;
+      top: -25%;
+      font-size: 0.7em;
+      // filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+      -webkit-transform: rotate(14deg);
+      -moz-transform: rotate(14deg);
+      -ms-transform: rotate(14deg);
+      -o-transform: rotate(14deg);
+      transform: rotate(14deg);
+    }
+
+    &.logo-flag2 {
+      color: #FABD99;
+      left: -35%;
+      top: -15%;
+      font-size: 0.6em;
+      -moz-transform: scaleX(-1) rotate(21deg);
+      -o-transform: scaleX(-1) rotate(21deg);
+      -webkit-transform: scaleX(-1) rotate(21deg);
+      transform: scaleX(-1) rotate(21deg);
+      filter: FlipH;
+      -ms-filter: "FlipH";
+    }
+
+    &.logo-flag3 {
+      color: #4A4A4A;
+      left: 20%;
+      top: 10%;
+      font-size: 0.32em;
+      // filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+      -webkit-transform: rotate(5deg);
+      -moz-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+      -o-transform: rotate(5deg);
+      transform: rotate(5deg);
+    }
+  }
+}
 
 #fotw-search-main {
   margin-top: 0;
@@ -62,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0.2rem;
 
   .searchfield {
-    padding:2rem 0;
+    padding:2rem 0 1rem;
 
     form {
 
@@ -183,6 +270,19 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
 
+    &.across-16 {
+      .flag-item-wrap {
+        width:6.25%;
+
+        &:nth-child(16n+1){
+          clear:both;
+        }
+
+        .flag-img-wrap { height: 75px; }
+        .flag-title-wrap { font-size: 0.8rem }
+      }
+    }
+
     &.across-20 {
       .flag-item-wrap {
         width:5%;
@@ -193,6 +293,23 @@ h1, h2, h3, h4, h5, h6 {
 
         .flag-img-wrap { height: 60px; }
         .flag-title-wrap { font-size: 0.6rem }
+      }
+    }
+
+    &.grayscale {
+      .flag-item-wrap {
+        .flag-img-wrap{
+          img {
+            filter: gray; /* IE6-9 */
+            filter: grayscale(1); /* Firefox 35+ */
+            -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+
+            &:hover {
+              filter: none;
+              -webkit-filter: grayscale(0);
+            }
+          }
+        }
       }
     }
 

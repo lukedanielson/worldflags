@@ -17,7 +17,7 @@ $router->get( '/', 		            ['as' => 'home', 'uses' => 'PagesController@get
 $router->get( '/getwikiimages', 	['as' => 'getwikiimages', 'uses' => 'PagesController@getWikiImages']);
 
 $router->get( 'flags', 		        ['as' => 'flags.index', 'uses' => 'FlagsController@index' ]);
-$router->get( 'flags/{slug}', 		['as' => 'flags.show',  'uses' => 'FlagsController@show' ])->where('slug', '[A-Za-z]+');;
+$router->get( 'flags/{slug}', 		['as' => 'flags.show',  'uses' => 'FlagsController@show' ])->where('slug', '[A-Za-z-]+');;
 
 Route::get('home', 'HomeController@index');
 
