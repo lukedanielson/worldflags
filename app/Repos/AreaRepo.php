@@ -1,10 +1,10 @@
 <?php namespace App\Repos;
 
 use App\Models\Country;
-use App\Interfaces\CountryInterface;
+use App\Interfaces\AreaInterface;
 use Illuminate\Support\Str;
 
-class CountryRepo implements CountryInterface {
+class AreaRepo implements AreaInterface {
 
 	protected $model;
 

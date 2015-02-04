@@ -31,7 +31,7 @@ class PagesController extends AppBaseController {
 	public function getHome()
 	{
 
-		$countries = $this->countryRepo->allBy('slug', 'ASC')->get(); //iso_3166-1_a2
+		$countries = $this->areaRepo->allBy('slug', 'ASC')->get(); //iso_3166-1_a2
 
 		return view('pages.home.index')->with(['countries' => $countries]);
 	}
@@ -44,8 +44,8 @@ class PagesController extends AppBaseController {
 		$baseUrl = 'https://en.wikipedia.org/w/api.php';
 		$params = [ 'action'=>'query', 'list'=>'search', 'format'=>'json', 'srsearch'=>'flag of laos', 'srnamespace' => '6'];
 
-		$countryRepo = App::make('App\Repos\CountryRepo');
-		$countries = $countryRepo->byRaw("slug RLIKE '^(z){1}.+'")->get(); //slug LIKE 'a%' OR slug LIKE 'b%' OR slug LIKE 'c%' OR slug LIKE 'd%'
+		$areaRepo = App::make('App\Repos\AreaRepo');
+		$countries = $areaRepo->byRaw("slug RLIKE '^(z){1}.+'")->get(); //slug LIKE 'a%' OR slug LIKE 'b%' OR slug LIKE 'c%' OR slug LIKE 'd%'
 
 		$requests = [];
 		$searchTerms = [];

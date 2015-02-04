@@ -1,6 +1,6 @@
 <?php namespace App\Interfaces;
 
-interface CountryInterface {
+interface AreaInterface {
 
 	public function all();
 

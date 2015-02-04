@@ -3,7 +3,7 @@
 
 
 use App\Repos\UserRepo;
-use App\Repos\CountryRepo;
+use App\Repos\AreaRepo;
 
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
@@ -27,7 +27,7 @@ abstract class ApiV1BaseController extends Controller {
 	{
 
 		$this->userRepo = App::make(UserRepo::class);
-		$this->countryRepo = App::make(CountryRepo::class);
+		$this->areaRepo = App::make(AreaRepo::class);
 		$this->currentUser = Auth::user();
 
 	}

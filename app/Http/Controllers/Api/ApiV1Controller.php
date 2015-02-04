@@ -35,18 +35,18 @@ class ApiV1Controller extends ApiV1BaseController {
 	public function getCountryMarkup(ApiContentMarkupRequest $request){
 
 		$q = $request->get('q');
-		$countriesReturned = $this->countryRepo->bySearch($q)->get();
-		$countriesCt = count($countriesReturned);
+		$itemsReturned = $this->areaRepo->bySearch($q)->get();
+		$itemsCt = count($itemsReturned);
 
-		$markup = View::make('partials.flag-items.flag-items-markup')->with(['countries' => $countriesReturned])->render();
+		$markup = View::make('partials.flag-items.flag-items-markup')->with(['countries' => $itemsReturned])->render();
 
 		$rData = [
 			'data' =>[
-				'countries' => ($countriesCt) ? $countriesReturned->toArray() : [],
+				'countries' => ($itemsCt) ? $itemsReturned->toArray() : [],
 				'markup' => ($markup) ? $markup : null
 			],
-			'status' => ($countriesCt) ? 'success' : 'error',
-			'msg' => ($countriesCt) ? 'successfully returned countries' : 'error returning any countries'
+			'status' => ($itemsCt) ? 'success' : 'error',
+			'msg' => ($itemsCt) ? 'successfully returned countries' : 'error returning any countries'
 		];
 
 		$response = Response::json($rData);
