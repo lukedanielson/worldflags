@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFlagImagesTable extends Migration {
+class CreateAreasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,15 @@ class CreateFlagImagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('flag_images', function(Blueprint $table)
+		Schema::create('areas', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('area_id')->unsigned()->index();
-			$table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
-			$table->integer('year')->unsigned();
+			$table->string('name');
+			$table->string('slug');
+			$table->string('classification');
 			$table->string('type')->nullable();
-			$table->string('url')->nullable();
+			$table->string('iso_3166_1_a2');
+			$table->string('iso_3166_1_a3');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +32,7 @@ class CreateFlagImagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('flag_images');
+		Schema::drop('areas');
 	}
 
 }

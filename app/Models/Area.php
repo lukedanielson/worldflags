@@ -2,20 +2,13 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model {
+class Area extends Model
+{
 
-	protected $table = 'countries';
-
-	protected $fillable = ['name', 'slug', 'type', 'iso_3166-1_a2', 'iso_3166-1_a3', 'created_at', 'updated_at' ];
+	protected $table = 'areas';
 
 	protected $with = ['FlagImages'];
 
-
-
-	public function scopeSlugAscending($query)
-	{
-		return $query->orderBy('slug','ASC');
-	}
 
 	public function code_iso($isoCode='alpha-2')
 	{
@@ -30,10 +23,12 @@ class Country extends Model {
 		return $this->{$columnName};
 	}
 
+
 	public function flagImages()
 	{
-		return $this->hasMany('App\Models\FlagImages', 'country_id', 'id');
+		return $this->hasMany('App\Models\FlagImages', 'area_id', 'id');
 	}
+
 
 	public function flagImage2015($type='svg')
 	{
@@ -59,5 +54,4 @@ class Country extends Model {
 
 		return $classes;
 	}
-
 }
