@@ -1,6 +1,6 @@
 <?php namespace App\Repos;
 
-use App\Models\Country;
+use App\Models\Area;
 use App\Interfaces\AreaInterface;
 use Illuminate\Support\Str;
 
@@ -11,7 +11,7 @@ class AreaRepo implements AreaInterface {
 	protected $currentSort = ['created_at', 'desc'];
 	protected $perPage = 25;
 
-	public function __construct(Country $model)
+	public function __construct(Area $model)
 	{
 		$this->model = $model;
 	}
@@ -79,8 +79,8 @@ class AreaRepo implements AreaInterface {
 		} else if( $qLength <= 3 )
 		{
 		    $query = $this->model->where('name', 'like', '%' . $q . '%')
-		                    ->orWhere('iso_3166-1_a2', '=', Str::upper($q))
-			                ->orWhere('iso_3166-1_a3', 'like', Str::upper($q));
+		                    ->orWhere('iso_3166_1_a2', '=', Str::upper($q))
+			                ->orWhere('iso_3166_1_a3', 'like', Str::upper($q));
 		} else
 		{
 			$query = ($q === '_all') ? $this->allBy() : $this->model->where('name', 'like', '%' . $q . '%');

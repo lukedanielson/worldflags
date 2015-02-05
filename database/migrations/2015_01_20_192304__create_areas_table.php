@@ -17,7 +17,7 @@ class CreateAreasTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('slug');
-			$table->string('classification');
+			$table->string('class');
 			//$table->string('type')->nullable();
 			$table->string('iso_3166_1_a2')->nullable();
 			$table->string('iso_3166_1_a3')->nullable();

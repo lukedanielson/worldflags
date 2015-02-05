@@ -6026,7 +6026,7 @@ form .prefix.has-error {
     color: #f6cbc3; }
 
 body {
-  background: #001b21;
+  background-color: #313547;
   color: rgba(255, 255, 255, 0.7); }
   body > .site-bg-item {
     position: fixed;
@@ -6048,10 +6048,12 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.7); }
 
 #bg-main {
-  background: #001b21 url('/assets/img/bg/001/1920x1080.jpg') repeat-x 0 0; }
+  background-color: #313547;
+  background-image: url('/assets/img/bg/002/world-map-960x540.jpg');
+  background-repeat: no-repeat; }
 
 #bg-overlay {
-  background: rgba(87, 114, 126, 0.54); }
+  background: rgba(50, 51, 55, 0.85); }
 
 .container.container-main {
   display: block;
@@ -6140,45 +6142,66 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0.2rem; }
   #fotw-search-main .searchfield {
     padding: 2rem 0 1rem; }
-    #fotw-search-main .searchfield form input[name="s"] {
+    #fotw-search-main .searchfield input[name="s"] {
       font-size: 3rem;
       height: 4rem;
       background-color: rgba(255, 255, 255, 0.15);
       border-color: rgba(204, 204, 204, 0.08);
       color: #cccccc;
       border-radius: 3px; }
-    #fotw-search-main .searchfield form input::-webkit-input-placeholder {
+    #fotw-search-main .searchfield input::-webkit-input-placeholder {
       color: rgba(204, 204, 204, 0.5);
       opacity: 0.6; }
-    #fotw-search-main .searchfield form input:-moz-placeholder {
+    #fotw-search-main .searchfield input:-moz-placeholder {
       /* Firefox 18- */
       color: rgba(204, 204, 204, 0.5);
       opacity: 0.6; }
-    #fotw-search-main .searchfield form input::-moz-placeholder {
+    #fotw-search-main .searchfield input::-moz-placeholder {
       /* Firefox 19+ */
       color: rgba(204, 204, 204, 0.5);
       opacity: 0.6; }
-    #fotw-search-main .searchfield form input:-ms-input-placeholder {
+    #fotw-search-main .searchfield input:-ms-input-placeholder {
       color: rgba(204, 204, 204, 0.5);
       opacity: 0.6; }
 
+#fotw-search-form-options label {
+  color: #CCC; }
+#fotw-search-form-options .checkwrap {
+  display: block;
+  float: left; }
+
 #fotw-results-main {
   display: block;
-  position: relative; }
+  position: relative;
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
   #fotw-results-main:after {
     content: "";
     display: table;
     clear: both; }
   #fotw-results-main > .results-loader {
+    display: none;
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(107, 115, 123, 0.7);
     border: none;
-    border-radius: 3px;
-    display: none; }
+    border-radius: 8px;
+    min-height: 124px; }
     #fotw-results-main > .results-loader.in {
+      display: block; }
+    #fotw-results-main > .results-loader .results-loader-icon {
       display: block;
-      background: rgba(255, 255, 255, 0.22); }
+      width: 80px;
+      height: 80px;
+      font-size: 80px;
+      position: absolute;
+      top: 16%;
+      left: 50%;
+      margin-left: -40px;
+      color: rgba(255, 255, 255, 0.8); }
   #fotw-results-main .no-items-wrap {
     display: block;
     padding: 1rem; }
@@ -6192,7 +6215,8 @@ h1, h2, h3, h4, h5, h6 {
       display: table;
       clear: both; }
     #fotw-results-main .items-wrap.show-titles .flag-item-wrap .flag-title-wrap {
-      display: block; }
+      display: block;
+      margin-bottom: 0.5rem; }
     #fotw-results-main .items-wrap.across-5 .flag-item-wrap {
       width: 20%; }
       #fotw-results-main .items-wrap.across-5 .flag-item-wrap:nth-child(5n+1) {
@@ -6285,7 +6309,7 @@ h1, h2, h3, h4, h5, h6 {
         /* <-- reset the font property */
         border-width: 1px;
         border-style: solid;
-        border-color: rgba(241, 241, 241, 0.16); }
+        border-color: rgba(90, 90, 90, 0.16); }
   #fotw-results-main .flag-title-wrap {
     display: none;
     text-align: center;

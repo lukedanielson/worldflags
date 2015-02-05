@@ -1,22 +1,22 @@
-@if($countries->count())
-    <div class="{{ (Request::path() === '/') ? 'items-wrap across-16' : 'items-wrap across-10 show-titles' }}">
-        @foreach($countries as $country)
+@if($areas->count())
+    <div class="items-wrap {{ ($areas->count() >= 20) ? 'across-16' : 'across-10' }} {{ (Request::path() === '/' && !Input::get('s') ) ? '' : 'show-titles' }}">
+        @foreach($areas as $area)
             <div class="flag-item-wrap">
-                <div class="{{ implode( $country->flagWrapCssClasses(), ' ' ) }}">
-                    <a class="flag-item-link" title="{{ $country->name }}" href="{{ URL::to('flags/' . $country->slug) }}">
-                        @if($country->flagImage2015())
-                            <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $country->flagImage2015()->url }}">
+                <div class="{{ implode( $area->flagWrapCssClasses(), ' ' ) }}">
+                    <a class="flag-item-link" title="{{ $area->name }}" href="{{ URL::to('flags/' . $area->slug) }}">
+                        @if($area->flagImage2015())
+                            <img title="{{ $area->name }}" class="flag-img flag-img-svg" src="{{ $area->flagImage2015()->url }}">
                         @else
-                            <img title="{{ $country->name }}" class="flag-img flag-img-svg" src="{{ $placeholderFlagImg1Url }}">
+                            <img title="{{ $area->name }}" class="flag-img flag-img-svg" src="{{ $placeholderFlagImg1Url }}">
                         @endif
                     </a>
                 </div><!-- end .flag-img-wrap -->
-                <div class="flag-title-wrap">{{ $country->name }}</div><!-- end .flag-title-wrap -->
+                <div class="flag-title-wrap">{{ $area->name }}</div><!-- end .flag-title-wrap -->
             </div><!-- end .flag-item-wrap -->
         @endforeach
-    </div><!-- end .items-wrap -->
+    </div>
 @else
     <div class="no-items-wrap">
-        <h3 class="no-items-header">There were no countries returned for the query</h3>
+        <h3 class="no-items-header">There were no results returned for the query{{ (isset($s) && $s && $s !== '') ? ' \'' . urldecode ($s) . '\'' : null  }}</h3>
     </div>
 @endif

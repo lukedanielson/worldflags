@@ -15,9 +15,9 @@ class Area extends Model
 		$columnName = null;
 
 		if($isoCode === 'alpha-2'){
-			$columnName = 'iso_3166-1_a2';
+			$columnName = 'iso_3166_1_a2';
 		} else if ($isoCode === 'alpha-3'){
-			$columnName = 'iso_3166-1_a3';
+			$columnName = 'iso_3166_1_a3';
 		}
 
 		return $this->{$columnName};
@@ -47,7 +47,7 @@ class Area extends Model
 			$classes[] = 'flag-img-wrap-inverted-ratio';
 			$classes[] = 'flag-img-wrap-no-border';
 
-		} else if ( in_array($this->code_iso('alpha-3'), ['VAT', 'CHE']) ) // vatican, switzerland
+		} else if ( in_array($this->code_iso('alpha-3'), ['CHE', 'NER', 'VAT' ]) ) // vatican, switzerland
 		{
 			$classes[] = 'flag-img-wrap-even-ratio';
 		}

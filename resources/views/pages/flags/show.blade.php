@@ -3,8 +3,8 @@
 @section('content')
     <div id="fotw-flag-header" class="row">
         <div class="small-12 columns">
-            @if($country)
-                <h2 title="{{ $country->name }}">{{ $country->name }}</h2>
+            @if($area)
+                <h2 title="{{ $area->name }}">{{ $area->name }}</h2>
             @endif
         </div><!-- end columns -->
     </div><!-- end .row -->

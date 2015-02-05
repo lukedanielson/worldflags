@@ -24,9 +24,9 @@ class FlagsController extends AppBaseController {
 	 */
 	public function index()
 	{
-		$countries = $this->areaRepo->allBy('slug', 'ASC')->get(); //iso_3166-1_a2
+		$areas = $this->areaRepo->allBy('slug', 'ASC')->get(); //iso_3166-1_a2
 
-		return view('pages.home.index')->with(['countries' => $countries]);
+		return view('pages.home.index')->with(['areas' => $areas]);
 	}
 
 	/**
@@ -58,12 +58,12 @@ class FlagsController extends AppBaseController {
 	public function show($slug)
 	{
 		if($slug === 'random'){
-			$country = $this->areaRepo->all()->random(1);
+			$area = $this->areaRepo->all()->random(1);
 		} else {
-			$country = $this->areaRepo->bySlug($slug)->first();
+			$area = $this->areaRepo->bySlug($slug)->first();
 		}
 
-		return view('pages.flags.show')->with(['country' => $country]);
+		return view('pages.flags.show')->with(['area' => $area]);
 	}
 
 	/**

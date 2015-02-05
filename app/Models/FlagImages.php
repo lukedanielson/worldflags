@@ -6,7 +6,7 @@ class FlagImages extends Model {
 
 	protected $table = 'flag_images';
 
-	protected $fillable = ['country_id', 'year', 'type', 'url', 'created_at', 'updated_at' ];
+	protected $fillable = ['area_id', 'year', 'type', 'url', 'created_at', 'updated_at' ];
 
 
 }

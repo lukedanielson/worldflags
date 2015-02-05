@@ -24,7 +24,7 @@ class ApiContentMarkupRequest extends Request {
 	public function rules()
 	{
 		return [
-			'q' => 'required',
+			's' => 'required',
 		];
 	}
 

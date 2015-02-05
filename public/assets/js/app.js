@@ -22,23 +22,31 @@
             $fotwSearchTimeout = null,
             $fotwSearchCurrQuery = null;
 
+
+        // $fotwSearchFormInput.on('onfocusout', function() {  toggleFotwResultsLoad('hide'); });
+
         $fotwSearchFormInput.on('keyup', function() {
-            var query = encodeURIComponent(this.value) || '';
+            var query = encodeURIComponent(this.value) || '',
+                isBlankQuery = (query === ''),
+                isDiffQuery = (query !== $fotwSearchCurrQuery);
+
+            if(isDiffQuery) { toggleFotwResultsLoad('show'); }
 
             clearTimeout($fotwSearchTimeout);
 
             $fotwSearchTimeout = setTimeout(function() {
-                console.log(query);
-                if(query !== '' && query !== $fotwSearchCurrQuery){
-                    submitFotwSearchForm({'q':query});
+                // console.log(query);
+
+                if( !isBlankQuery && isDiffQuery){
+                    submitFotwSearchForm({'s':query});
 
                 } else if(query !== $fotwSearchCurrQuery) {
-                    submitFotwSearchForm({'q':'_all'});
+                    submitFotwSearchForm({'s':'_all'});
                 }
 
                 $fotwSearchCurrQuery = query;
-            }, 300);
-        })
+            }, 220);
+        });
 
     });
 
@@ -85,7 +93,7 @@
 
     function getFotwApiResults( d ) {
 
-        var url = 'http://worldflags.dev/api/v1/countryMarkup';
+        var url = 'http://worldflags.dev/api/v1/areaMarkup';
 
         var jqxhr = $.getJSON( url, d, function(data) {
             // console.log( "getFotwApiResults success" );
@@ -113,6 +121,8 @@
         var $resultsDiv = $('#fotw-results-main'),
             $itemsWrap = $resultsDiv.find('.items-wrap');
 
+            // console.log(data);
+
         if(data && data.status){
             var $markup = data.data.markup || '<p>the markup</p>';
             $resultsDiv.find('.no-items-wrap').remove();
@@ -122,6 +132,25 @@
             console.log('there was an error');
         }
 
+        toggleFotwResultsLoad('hide');
+    }
+
+
+    function toggleFotwResultsLoad(action) {
+        var resultsLoader = document.getElementById("fotw-results-main").getElementsByClassName("results-loader")[0] || null;
+        action = (action && action !== '') ? action : 'hide';
+
+
+        if(action === 'show'){
+            if( !hasClass(resultsLoader, 'in') ){ resultsLoader.classList.add("in"); }
+        } else {
+            if( hasClass(resultsLoader, 'in') ){ resultsLoader.classList.remove("in"); }
+        }
+    }
+
+
+    function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
     }
 
     /* Subscriptions */

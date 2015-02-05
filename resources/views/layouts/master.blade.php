@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="{{ URL::to('assets/img/icons/apple/apple-touch-icon.png') }}">
 
     <link href="http://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="{{ URL::to('/assets/css/main.css') }}" type="text/css">
 
     @include('partials.sections.scripts.header-scripts-main')

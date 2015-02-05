@@ -12,7 +12,6 @@
 */
 
 
-//$countryInfo = \App\Utilities\CountryInfo::getIsoCountriesList();
 $router->get( '/', 		            ['as' => 'home', 'uses' => 'PagesController@getHome' ]);
 $router->get( '/getwikiimages', 	['as' => 'getwikiimages', 'uses' => 'PagesController@getWikiImages']);
 
@@ -35,7 +34,7 @@ $router->group(['prefix' => 'api'], function($router)
 	{
 
 		get( '/', 		            ['as' => 'api.v1.index', 'uses' => 'Api\ApiV1Controller@index' ]);
-		get( '/countryMarkup', 		['as' => 'api.v1.countryMarkup', 'uses' => 'Api\ApiV1Controller@getCountryMarkup' ]);
+		get( '/areaMarkup', 		['as' => 'api.v1.areaMarkup', 'uses' => 'Api\ApiV1Controller@getAreaMarkup' ]);
 
 	});
 

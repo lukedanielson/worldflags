@@ -30,11 +30,15 @@ class PagesController extends AppBaseController {
 
 	public function getHome()
 	{
+		$s = $this->input->get('s');
+		$at = $this->input->get('at') ?: [];
 
-		$countries = $this->areaRepo->allBy('slug', 'ASC')->get(); //iso_3166-1_a2
+		$areas = ($s) ? $this->areaRepo->bySearch($s)->get() : $this->areaRepo->allBy('slug', 'ASC')->get();
 
-		return view('pages.home.index')->with(['countries' => $countries]);
+		return view('pages.home.index')->with(['areas' => $areas, 's' => $s, 'at' => $at ]);
 	}
+
+
 
 
 	public function getWikiImages()
@@ -45,12 +49,12 @@ class PagesController extends AppBaseController {
 		$params = [ 'action'=>'query', 'list'=>'search', 'format'=>'json', 'srsearch'=>'flag of laos', 'srnamespace' => '6'];
 
 		$areaRepo = App::make('App\Repos\AreaRepo');
-		$countries = $areaRepo->byRaw("slug RLIKE '^(z){1}.+'")->get(); //slug LIKE 'a%' OR slug LIKE 'b%' OR slug LIKE 'c%' OR slug LIKE 'd%'
+		$areas = $areaRepo->byRaw("slug RLIKE '^(z){1}.+'")->get(); //slug LIKE 'a%' OR slug LIKE 'b%' OR slug LIKE 'c%' OR slug LIKE 'd%'
 
 		$requests = [];
 		$searchTerms = [];
-		foreach($countries as $country){
-			$term = 'flag of ' . $country->name;
+		foreach($areas as $area){
+			$term = 'flag of ' . $area->name;
 			$requestParams = $params;
 			$requestParams['srsearch'] = $term;
 			$searchTerms[] = $term;
