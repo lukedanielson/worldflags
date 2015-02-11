@@ -348,9 +348,31 @@ class AreaData {
 			"type" => "sovereign_state",
 			"class" => "republic_semi_presidential"
 		),
+		array(
+			"ISO2" => "KH",
+			"ISO3" => "KHM",
+			"name" => "Cambodia",
+			"names" => ["en" => ["official" => "Kingdom of Cambodia"]],
+			"type" => "sovereign_state",
+			"class" => "parliamentary_constitutional_monarchy"
+		),
 
-
-
+		array(
+			"ISO2" => "CA",
+			"ISO3" => "CAN",
+			"name" => "Canada",
+			"names" => ["en" => ["official" => "Canada"]],
+			"type" => "sovereign_state",
+			"class" => "parliamentary_constitutional_monarchy"
+		),
+		array(
+			"ISO2" => "CM",
+			"ISO3" => "CMR",
+			"name" => "Cameroon",
+			"names" => ["en" => ["official" => "Republic of Cameroon"]],
+			"type" => "sovereign_state",
+			"class" => "republic_presidential"
+		),
 
 
 
@@ -406,12 +428,7 @@ class AreaData {
 
 
 
-		array(
-			"ISO2" => "CA",
-			"ISO3" => "CAN",
-			"name" => "Canada",
-			"type" => "sovereign_state",
-		),
+
 		array(
 			"ISO2" => "CD",
 			"ISO3" => "COD",
@@ -448,12 +465,7 @@ class AreaData {
 			"name" => "Chile",
 			"type" => "sovereign_state",
 		),
-		array(
-			"ISO2" => "CM",
-			"ISO3" => "CMR",
-			"name" => "Cameroon",
-			"type" => "sovereign_state",
-		),
+
 		array(
 			"ISO2" => "CN",
 			"ISO3" => "CHN",
@@ -802,12 +814,7 @@ class AreaData {
 			"name" => "Kyrgyzstan",
 			"type" => "sovereign_state",
 		),
-		array(
-			"ISO2" => "KH",
-			"ISO3" => "KHM",
-			"name" => "Cambodia",
-			"type" => "sovereign_state",
-		),
+
 		array(
 			"ISO2" => "KI",
 			"ISO3" => "KIR",
