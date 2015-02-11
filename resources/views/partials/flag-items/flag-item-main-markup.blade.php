@@ -1,8 +1,7 @@
 @if($area)
     <div class="country-item-wrap">
-
         <div class="row">
-            <div class="small-12 medium-7 columns">
+            <div class="small-12 columns">
                 @if($area->flagImage2015())
                     <div class="flag-item-wrap">
                         <div class="{{ implode( $area->flagWrapCssClasses(), ' ' ) }}">

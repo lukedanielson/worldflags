@@ -415,4 +415,48 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.flag-wrap {}
+
+.flag-img-wrap {
+
+  .flag-item-link {
+    display: inline-block;
+
+    .flag-img {
+
+      &.flag-img-svg {
+        width:100%;
+      }
+    }
+
+  }
+
+}
+
+#fotw-flag-show-header {}
+
+#fotw-flag-show-main {
+  .flag-img-wrap {
+    .flag-item-link {
+      display: block;
+      padding: 5px;
+      border: 2px solid rgba(244, 244, 244, 0.16);
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.flag-details-wrap {
+  .fdw-header {
+    display: inline-block;
+    margin-right:15px;
+
+    &.fdw-header-primary {
+      display:block;
+      margin-top:-5px;
+    }
+  }
+  .fdw-copy {
+    font-weight: 300;
+  }
+}
